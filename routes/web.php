@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/',  'TicketController@index')->name('index');
+Route::get('/allticket',  'TicketController@index')->name('index');
 Route::post('add-ticket',  'TicketController@add')->name('addTicket');
 Route::post('edit-ticket',  'TicketController@update')->name('editTicket');
 Route::post('delete-ticket',  'TicketController@delete')->name('deleteTicket');
-Route::post('update-ticket-type',  'TicketController@updateTicketType')->name('updateTicketType');
+Route::post('edit-ticket-type',  'TicketController@updateTicketType')->name('updateTicketType');
 Route::post('add-ticket-type',  'TicketController@addTicketType')->name('addTicketType');
 

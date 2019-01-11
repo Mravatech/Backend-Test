@@ -21,9 +21,7 @@ class TicketController extends Controller
     {	
     	$validator = Validator::make($request->all(), [ 
             'name' 			=> 'required', 
-            'email' 		=> 'required|email', 
-            'content' 		=> 'required', 
-            'phone' 		=> 'required', 
+            'description' 		=> 'required', 
             'ticket_type' 	=> 'required',
         ]);
 
@@ -32,9 +30,7 @@ class TicketController extends Controller
         }
     	$ticket 				= new Ticket;
     	$ticket->name 			= $request->name;
-    	$ticket->email	 		= $request->email;
-    	$ticket->content 		= $request->content;
-    	$ticket->phone_number 	= $request->phone;
+    	$ticket->content 		= $request->description;
     	$ticket->ticket_type 	= $request->ticket_type;
 
         if($ticket->save()){
@@ -46,11 +42,10 @@ class TicketController extends Controller
     }
 
     public function update(Request $request)
-    {	$validator = Validator::make($request->all(), [ 
+    {	
+    	$validator = Validator::make($request->all(), [ 
             'name' 			=> 'required', 
-            'email' 		=> 'required|email', 
-            'content' 		=> 'required', 
-            'phone' 		=> 'required', 
+            'description' 		=> 'required', 
             'ticket_type' 	=> 'required',
         ]);
 
@@ -59,9 +54,7 @@ class TicketController extends Controller
         }
     	$ticket 				= Ticket::find($request->id);
     	$ticket->name 			= $request->name;
-    	$ticket->email	 		= $request->email;
-    	$ticket->content 		= $request->content;
-    	$ticket->phone_number 	= $request->phone;
+    	$ticket->content 		= $request->description;
     	$ticket->ticket_type 	= $request->ticket_type;
         if($ticket->save()){
         	return response()->json(['success' => $ticket], 200); 
