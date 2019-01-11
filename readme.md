@@ -9,7 +9,7 @@ keys:
 <p>Endpoint to edit ticket '/edit-ticket'</p>
 keys: 
 	name => required,<br/>
-	description => required,
+	description => required,<br/>
 	ticket_type => required,<br/>
 	<br/><br/>
 <p>Endpoint to delete ticket '/delete-ticket'</p>
